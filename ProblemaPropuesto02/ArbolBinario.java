@@ -24,4 +24,24 @@ public class ArbolBinario<T extends Comparable<T>> {
         }
         return raiz;
     }
+
+    // recorrido en preorden raiz - izquierda - derecha
+
+
+    // recorrido en inorden izquierda - raiz - derecha
+
+
+    //recorrido en postorden izquierda - derecha - raiz
+    public void postorden() {
+        postordenRecorrido(raiz);
+        System.out.println(); // imprimir nueva línea al final para separar los resultados
+    }
+
+    private void postordenRecorrido(Nodo<T> nodo) {
+        if (nodo != null) {
+            postordenRecorrido(nodo.izquierda); // recorremos el subárbol izquierdo en postorden
+            postordenRecorrido(nodo.derecha); // Recorremos el subárbol derecho en postorden
+            System.out.print(nodo.dato + " "); // imprimimos el dato del nodo actual
+        }
+    }
 }
