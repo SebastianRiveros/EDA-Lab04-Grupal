@@ -1,3 +1,4 @@
+
 public class ArbolBinario<T extends Comparable<T>> {
     private Nodo<T> raiz;
 
@@ -23,5 +24,18 @@ public class ArbolBinario<T extends Comparable<T>> {
             raiz.derecha = insertarRecursivo(raiz.derecha, dato);
         }
         return raiz;
+    }
+
+    // Método para recorrer el árbol en inorden
+    public void recorrerInorden() {
+        recorrerInordenRecursivo(raiz);
+    }
+
+    private void recorrerInordenRecursivo(Nodo<T> nodo) {
+        if (nodo!= null) {
+            recorrerInordenRecursivo(nodo.izquierda);
+            System.out.print(nodo.dato + " ");
+            recorrerInordenRecursivo(nodo.derecha);
+        }
     }
 }
