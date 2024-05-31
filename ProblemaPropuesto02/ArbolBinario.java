@@ -1,4 +1,3 @@
-
 public class ArbolBinario<T extends Comparable<T>> {
     private Nodo<T> raiz;
 
@@ -64,5 +63,18 @@ public class ArbolBinario<T extends Comparable<T>> {
             System.out.print(nodo.dato + " ");
         }
     }
+    public void imprimirArbol() {
+        imprimirArbolRecursivo(raiz, 0);
+    }
 
+    private void imprimirArbolRecursivo(Nodo<T> nodo, int nivel) {
+        if (nodo != null) {
+            imprimirArbolRecursivo(nodo.derecha, nivel + 1);
+            for (int i = 0; i < nivel; i++) {
+                System.out.print("    ");
+            }
+            System.out.println("|-- " + nodo.dato);
+            imprimirArbolRecursivo(nodo.izquierda, nivel + 1);
+        }
+    }
 }

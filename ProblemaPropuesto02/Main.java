@@ -1,4 +1,3 @@
-
 import java.util.*;
 public class Main{
     public static void main(String[] args){
@@ -21,17 +20,23 @@ public class Main{
         arbolCadena.insertar("Leonardo");
         arbolCadena.insertar("Gustavo");
         arbolCadena.insertar("Antony");
-
-        System.out.println("Recorrido en inorden en la cadena String::");
-        arbolCadena.recorrerInorden();
-        System.out.println("");
-        System.out.println("Recorrido en inorden en la cadena enteros::");
+        
+        System.out.println("Arbol de enteros inicial:");
+        arbolEntero.imprimirArbol();
+        System.out.println("\nRecorrido en inorden en la cadena enteros:");
         arbolEntero.recorrerInorden();
-        System.out.println("");
-        System.out.println("Recorrido en postorden en la cadena String::");
-        arbolCadena.recorrerPostorden();
-        System.out.println("");
-        System.out.println("Recorrido en postorden en la cadena enteros:");
+        System.out.println("\nRecorrido en postorden en la cadena enteros:");
         arbolEntero.recorrerPostorden();
+        System.out.println("\nRecorrido en preorden en la cadena enterors:");
+        arbolEntero.recorrerPreorden();
+        
+        System.out.println("Arbol de Cadenas inicial:");
+        arbolCadena.imprimirArbol();
+        System.out.println("Recorrido en inorden en la cadena String:");
+        arbolCadena.recorrerInorden();
+        System.out.println("\nRecorrido en postorden en la cadena String:");
+        arbolCadena.recorrerPostorden();
+        System.out.println("\nRecorrido en preorden en la cadena de String:");
+        arbolCadena.recorrerPreorden();
     }
 }
