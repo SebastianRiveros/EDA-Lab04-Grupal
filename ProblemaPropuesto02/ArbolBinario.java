@@ -26,39 +26,43 @@ public class ArbolBinario<T extends Comparable<T>> {
         return raiz;
     }
 
-<<<<<<< HEAD
     // Método para recorrer el árbol en inorden
     public void recorrerInorden() {
         recorrerInordenRecursivo(raiz);
     }
 
     private void recorrerInordenRecursivo(Nodo<T> nodo) {
-        if (nodo!= null) {
+        if (nodo != null) {
             recorrerInordenRecursivo(nodo.izquierda);
             System.out.print(nodo.dato + " ");
             recorrerInordenRecursivo(nodo.derecha);
         }
     }
-}
-=======
-    // recorrido en preorden raiz - izquierda - derecha
 
-
-    // recorrido en inorden izquierda - raiz - derecha
-
-
-    //recorrido en postorden izquierda - derecha - raiz
-    public void postorden() {
-        postordenRecorrido(raiz);
-        System.out.println(); // imprimir nueva línea al final para separar los resultados
+    // Método para recorrer el árbol en preorden
+    public void recorrerPreorden() {
+        recorrerPreordenRecursivo(raiz);
     }
 
-    private void postordenRecorrido(Nodo<T> nodo) {
+    private void recorrerPreordenRecursivo(Nodo<T> nodo) {
         if (nodo != null) {
-            postordenRecorrido(nodo.izquierda); // recorremos el subárbol izquierdo en postorden
-            postordenRecorrido(nodo.derecha); // Recorremos el subárbol derecho en postorden
-            System.out.print(nodo.dato + " "); // imprimimos el dato del nodo actual
+            System.out.print(nodo.dato + " ");
+            recorrerInordenRecursivo(nodo.izquierda);
+            recorrerInordenRecursivo(nodo.derecha);
         }
     }
+
+    // Método para recorrer el árbol en postorden
+    public void recorrerPostorden() {
+        recorrerPostordenRecursivo(raiz);
+    }
+
+    private void recorrerPostordenRecursivo(Nodo<T> nodo) {
+        if (nodo != null) {
+            recorrerInordenRecursivo(nodo.izquierda);
+            recorrerInordenRecursivo(nodo.derecha);
+            System.out.print(nodo.dato + " ");
+        }
+    }
+
 }
->>>>>>> b83127408dc16599339376909b15c6423e4e3f53

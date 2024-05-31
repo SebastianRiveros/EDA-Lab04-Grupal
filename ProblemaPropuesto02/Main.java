@@ -1,3 +1,5 @@
+
+import java.util.*;
 public class Main{
     public static void main(String[] args){
         // Pruebas con un arbol de enteros
@@ -9,10 +11,7 @@ public class Main{
         arbolEntero.insertar(40);
         arbolEntero.insertar(60);
         arbolEntero.insertar(80);
-
-        System.out.println("Recorrido en postorden:");
-        arbolEntero.postorden();
-
+      
         // Pruebas con un arbol de cadenas
         ArbolBinario<String> arbolCadena = new ArbolBinario<>();
         arbolCadena.insertar("Sebastian");
@@ -23,7 +22,16 @@ public class Main{
         arbolCadena.insertar("Gustavo");
         arbolCadena.insertar("Antony");
 
-        System.out.println("Recorrido en postorden:");
-        arbolCadena.postorden();
+        System.out.println("Recorrido en inorden en la cadena String::");
+        arbolCadena.recorrerInorden();
+        System.out.println("");
+        System.out.println("Recorrido en inorden en la cadena enteros::");
+        arbolEntero.recorrerInorden();
+        System.out.println("");
+        System.out.println("Recorrido en postorden en la cadena String::");
+        arbolCadena.recorrerPostorden();
+        System.out.println("");
+        System.out.println("Recorrido en postorden en la cadena enteros:");
+        arbolEntero.recorrerPostorden();
     }
 }
